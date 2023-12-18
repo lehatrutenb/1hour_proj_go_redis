@@ -1,0 +1,8 @@
+REM chmod 755 to_run.bat  // make file excutable
+
+docker run --name redis -p 8080:6379 -d redis
+
+go run main.go
+
+docker stop redis
+docker rm redis
